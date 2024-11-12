@@ -1,0 +1,12 @@
+from flask import Flask, request
+
+app = Flask(name)
+
+@app.route('/')
+def index():
+    user_ip = request.remote_addr  # IP пользователя
+    user_agent = request.headers.get('User-Agent')  # информация о браузере
+    return f"Ваш IP: {user_ip}, браузер: {user_agent}"
+
+if name == 'main':
+    app.run(debug=True)
